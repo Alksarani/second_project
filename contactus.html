@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>contactus</title>
+<link rel="stylesheet" href="Style/contactusstyle.css">
+<script>
+function validate(){
+	if(document.frm1.email.value.length==0){
+		alert("Please provide your EMAIL!");
+	}
+	if((document.frm1.email.value.indexOf("@")<=1) || (document.frm1.email.value.lastIndexOf(".")-(document.frm1.email.value.indexOf("@")<2)){
+		alert("Please enter a correct EMAIL!");
+	}
+	if(document.frm1.name.value.length==0){
+		alert("Please provide your NAME!");
+	}
+	if(document.frm1.pno.value.length==0){
+		alert("Please provide your PHONE NUMBER!");
+	}
+	else if(document.frm1.pno.value.length<10){
+		alert("PHONE NUMBER should be more than 10 numbers");
+	}
+	if(isNaN(document.frm1.pno.value)){
+		alert("Invalid PHONE NUMBER! please should be a number");
+	}
+	if((!document.frm1.gender[0].checked)&&(!document.frm1.gender[1].checked)){
+		alert("Please select GENDER!");
+	}
+	if(document.frm1.city.selectedIndex==0){
+		alert("Please choose a CITY!");
+	}
+	if(document.frm1.message.value.length==0){
+		alert("Please enter your MESSAGE!");
+	}
+}
+</script>
+</head>
+<body>
+<div class="header">
+<img src="C:\Users\MX\Desktop\IndexNo_WebLab\image/LOGO.JPEG" class="logo">
+<div class="header-right">
+	<a href="C:\Users\MX\Desktop\IndexNo_WebLab\login.html">Sign In</a>
+	<a class="active" href="">Contact Us</a>
+	<a href="C:\Users\MX\Desktop\IndexNo_WebLab\aboutus.html">About Us</a>
+	<a href="C:\Users\MX\Desktop\IndexNo_WebLab\home.html">Home</a>
+</div>
+</div>
+<div class="hr" ><hr>
+</div>
+<h1>Contact us</h1>
+<div class ="form">
+<table>
+<form name="frm1" action="insert" method="POST" onSubmit="validate();">
+<tr>
+	<td>Email</td>
+	<td><input type="text" name="email" ></td>
+</tr>
+<tr>
+	<td>Name</td>
+	<td><input type="text" name="name" ></td>
+</tr>
+<tr>
+	<td>Phone number</td>
+	<td><input type="text" name="pno" ></td>
+</tr>
+<tr>
+	<td>Gender</td>
+	<td>
+		<input type="radio" name="gender" value="male">Male
+		<input type="radio"name="gender" value="female">Female
+	</td>
+</tr>
+	<td>City</td>
+	<td>
+		<select id="city" name="city">
+			<option value="Choose a city">Choose a city</option>
+			<option value="kaduwela">Kaduwela</option>
+			<option value="kadawatha">Kadawatha</option>
+			<option value="waththala">Waththala</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<td>Message</td>
+	<td><input type="text" name="message" ></td>
+</tr>
+<tr>
+	<td><input type="submit" value="Submit"></td>
+</tr>
+</form>
+</table>
+</div>
+<div class="footer">
+<p>c 2022 lankafashion.lk</p>
+</div>	
+</body>
+</html>
